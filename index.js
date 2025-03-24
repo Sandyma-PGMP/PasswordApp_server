@@ -6,7 +6,11 @@ const bodyParser = require("body-parser");
 const authRoutes = require("./Routes/auth.routes");
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: "https://passwordappy.netlify.app/",
+  methods: ["GET", "POST"],
+  credentials: true
+}));
 app.use(bodyParser.json());
 app.use("/auth", authRoutes);
 
