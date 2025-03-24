@@ -21,7 +21,7 @@ exports.forgotPassword = async (req, res) => {
     to: user.email,
     from: process.env.EMAIL,
     subject: "Password Reset",
-    html: `<p>Click <a href="http://localhost:5000/reset-password/${token}">here</a> to reset your password</p>`
+    html: `<p>Click <a href="https://passwordappy.netlify.app/reset-password/${token}">here</a> to reset your password</p>`
   });
   res.json({ message: "Password reset link sent to email" });
 };
